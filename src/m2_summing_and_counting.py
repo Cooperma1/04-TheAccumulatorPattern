@@ -11,7 +11,7 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
          Aaron Wilkin, their colleagues, and Miguel Cooper.
 """  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
-import math
+
 # -----------------------------------------------------------------------------
 # Students: As you work each of these problems, ask yourself:
 #   1. Do I need a loop?
@@ -22,6 +22,8 @@ import math
 #        -- IN the loop?
 #        -- AFTER the loop?
 # -----------------------------------------------------------------------------
+import math
+
 def main():
     """ Calls the   TEST   functions in this module. """
     run_test_sum_more_cosines()
@@ -32,7 +34,7 @@ def main():
 def run_test_sum_more_cosines():
     """ Tests the   sum_more_cosines   function. """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # done: 2. Implement this TEST function.
     #   It TESTS the  sum_more_cosines  function defined below.
     #   Include at least **   3   ** tests (we wrote one for you).
     #
@@ -127,7 +129,7 @@ def sum_more_cosines(m, n):
 def run_test_count_sines_from():
     """ Tests the   count_sines_from   function. """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement this TEST function.
+    # done: 4. Implement this TEST function.
     #   It TESTS the  count_sines_from  function defined below.
     #   Include at least **   6   ** tests (we wrote one for you).
     #              ** Yes, 6 (six) tests. **
@@ -146,7 +148,7 @@ def run_test_count_sines_from():
     print('       actual:  ', answer)
 
     # -------------------------------------------------------------------------
-    # TODO: 4 (continued).
+    # done: 4 (continued).
     # Below this comment, add 5 more test cases of your own choosing.
     # -------------------------------------------------------------------------
 # Test 2:
@@ -195,7 +197,7 @@ def count_sines_from(m, n):
       -- count_sines_from(9, 9)  returns  1
     """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # done: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     # IMPORTANT: As in previous problems in this session,
@@ -233,10 +235,39 @@ def run_test_count_sines_vs_cosines():
     print('       actual:  ', answer)
 
     # -------------------------------------------------------------------------
-    # TODO: 6 (continued).
+    # done: 6 (continued).
     # Below this comment, add 5 more test cases of your own choosing.
     # -------------------------------------------------------------------------
 
+    # Test 2:
+    expected = 4
+    answer = count_sines_vs_cosines(3)
+    print('Test 2 expected:', expected)
+    print('       actual:  ', answer)
+
+    # Test 3:
+    expected = 0
+    answer = count_sines_vs_cosines(0)
+    print('Test 3 expected:', expected)
+    print('       actual:  ', answer)
+
+    # Test 4:
+    expected = 1
+    answer = count_sines_vs_cosines(1)
+    print('Test 4 expected:', expected)
+    print('       actual:  ', answer)
+
+    # Test 5:
+    expected = 12
+    answer = count_sines_vs_cosines(12)
+    print('Test 5 expected:', expected)
+    print('       actual:  ', answer)
+
+    # Test 6:
+    expected = 9
+    answer = count_sines_vs_cosines(9)
+    print('Test 6 expected:', expected)
+    print('       actual:  ', answer)
 
 def count_sines_vs_cosines(m):
     """
@@ -271,7 +302,11 @@ def count_sines_vs_cosines(m):
     #   you must NOT use the 2 or 3-parameter versions
     #   of the RANGE expression, if you happen to know them.
     # -------------------------------------------------------------------------
-
+    total = 0
+    for k in range((2 * m) + 1):
+        if math.sin(k - m) > math.cos(k - m):
+            total = total + 1
+    return total
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
